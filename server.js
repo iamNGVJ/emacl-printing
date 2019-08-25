@@ -36,15 +36,11 @@ app.use(session({
   saveUninitialized: true,
   secret:"panashe",
   cookie: {maxAge: 60000},
-  store:new mongoStore({url:'mongodb://localhost/printerJob',autoReconnect:true})
+  store:new mongoStore({url:'mongodb+srv://ngonidzashe:Nickm%40ng13@cluster0-wdod3.azure.mongodb.net/test?retryWrites=true&w=majority',autoReconnect:true})
 }));
-
-//Flash Notifications
-app.use(flash(app));
 
 //Models & Routes
 const User = require('./models/users');
-require('./config/passport');
 app.use(require('./routes'));
 // app.use(require('morgan')('dev'));
 
