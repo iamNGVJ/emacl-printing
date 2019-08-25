@@ -1,0 +1,138 @@
+body{
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: none;
+	font: 15px/1.5 'Ubuntu Condensed';
+}
+
+.container{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  font: 15px/1.5 'Ubuntu Condensed';
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  width: 764px;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+@keyframes move-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes move-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+#signupbtn{
+  animation: move-in-left 1s ease-in-out;
+  margin-right: 5px;
+}
+
+#loginbtn{
+  animation: move-in-right 1s ease-in-out;
+  margin-right: 5px;
+}
+
+/*#span{
+  animation: dropdown 2s ease-in-out;
+}*/
+
+#we{
+  animation: move-in-right 5s ease-in-out;
+}
+
+#are{
+  animation: move-in-right 8s ease-in-out;
+}
+
+#here{
+  animation: move-in-right 11s ease-in-out;
+}
+
+#to{
+  animation: move-in-right 14s ease-in-out;
+}
+
+#make{
+  animation: move-in-right 16s ease-in-out;
+}
+
+#printing{
+  animation: move-in-right 18s ease-in-out;
+}
+
+#an{
+  animation: move-in-right 20s ease-in-out;
+}
+
+#easy{
+  animation: move-in-right 21s ease-in-out;
+}
+
+#job{
+  animation: move-in-right 22s ease-in-out;
+}
+
+#for{
+  animation: move-in-left 24s ease-in-out;
+}
+
+#you{
+  animation: move-in-left 26s ease-in-out;
+}
+
+#dot{
+  animation: move-in-left 27s ease-in-out;
+}
+
+h1{
+  font-size: 28px;
+}
+
+#lgnhdn{
+  animation: move-in-left 5s ease-in-out;
+}
+
+#hiddenview{
+  margin-top: 35px;
+}
+
+#greeting{
+  animation: move-in-left 2s ease-in-out;
+}
+
+#sgnup{
+  margin-top: 20px;
+}
