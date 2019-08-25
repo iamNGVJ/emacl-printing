@@ -1,7 +1,7 @@
 {
   "name": "project-print",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "server.js",
   "dependencies": {
     "bcrypt": "^3.0.6",
     "bcrypt-nodejs": "^0.0.3",
