@@ -1,8 +1,11 @@
+const fs = require('fs');
 const mongoose = require('mongoose');
 const express = require('express');
 const auth = require('../auth');
 const Users = mongoose.model('User');
+const Docs = require('./../../models/docs');
 const router = express.Router();
+const path = require('path');
 
 //Post new user route (optional, everyone has access)
 router.post('/register', auth.optional, (req, res, next) => {
@@ -52,6 +55,15 @@ router.post('/register', auth.optional, (req, res, next) => {
   return finalUser.save()
     .then((user) => {
       if(user){
+
+        if (!fs.existsSync(__dirname + `/../uploads/documents/`)) {
+          fs.mkdirSync(__dirname + `/../uploads/documents/`);
+        }
+        if (!fs.existsSync(__dirname + `/../uploads/documents/${user.name}`)){
+          console.log(`---${user.name}'s folder does not exist. Creating it.`);
+          fs.mkdirSync(__dirname + `/../uploads/documents/${user.name}`);
+        }
+        console.log('Registered New User!');
         return res.redirect('/login');
       }else{
         console.log('Failed to signup');
@@ -86,23 +98,6 @@ router.post('/login', auth.optional, (req, res, next) => {
   }
 
   authenticate(user.email, user.password, res);
-  // return passport.authenticate('local', {
-  //   session: false
-  // },
-  // (err, passportUser, info) => {
-  //   if(err){
-  //     return next(err);
-  //   }
-  //
-  //   if(passportUser){
-  //     const user = passportUser;
-  //     user.token = passportUser.generateJWT();
-  //
-  //     return res.json({user: user.toAuthJSON()});
-  //   }
-  //
-  //   return status(400).info;
-  // })(req, res, next);
 });
 
 //GET dashboard route (required, only authenticated users have access)
@@ -128,13 +123,14 @@ var authenticate = (email, password, res) => {
         const user = newUser;
         user.token = newUser.generateJWT();
 
+        console.log('Logging in user.');
         res.set('Authorization', `Token ${user.token}`);
         res.render('dashboard', {
           title: 'Dashboard',
           name: user.name,
           wallet: user.wallet
-        });
-      }
+      });
+    }
   }).catch((err) => console.log(err.message));
 };
 

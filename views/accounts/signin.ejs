@@ -1,17 +1,17 @@
 <% layout('boilerplate') -%>
-<body>
-  <div class="container">
-      <div id="openview">
-          <h2 id="lgnhdn" class="para1">Welcome back. Please login.</h2>
-      <div>
+<div class="container">
+  <div id="openview">
+    <h2 id="lgnhdn" class="para1">Welcome. Please login.</h2>
+    <div>
       <div id="hiddenview">
-          <form method="post" action="/api/users/login">
-              <input type="email" name="email" placeholder="Email"><br>
-              <input type="password" name="password" placeholder="Password">
-              <hr>
-              <input type="submit" name="" value="LOGIN">
-          </form>
+        <form method="post" action="/api/users/login">
+          <input type="email" name="email" placeholder="Email"><br>
+          <input type="password" name="password" placeholder="Password">
+          <hr>
+          <input type="submit" name="" value="LOGIN">
+        </form>
       </div>
+    </div>
   </div>
-  <footer id="footer">@pmushy @ngvj</footer>
-</body>
+</div>
+<footer id="footer">Or <a href="/signup">REGISTER</a> instead</footer>

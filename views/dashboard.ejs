@@ -1,11 +1,67 @@
 <%layout('boilerplate')-%>
-<body>
-  <div class="row">
-    <div class="col">
-      <h1>Hi <%-name%></h1>
-      <div class="">
-        <label for="wallet">Wallet:</label><span class="badge badge-pill">$<%-wallet%></span>
+  <div>
+    <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light text-mute">
+      <div id="name">
+        <h3>Hi <%-name%></h3>
       </div>
-    </div>
+      <div id="header">
+        <header>
+          <a href="/" class="h1 navbar-brand nav-link" data-toggle="tooltip" data-placement="bottom" title="Developed By Ngonidzashe Mangudya & Panashe Mushinyi">EMACL</a>
+        </header>
+      </div>
+      <div id="list">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="#">Wallet Options</a>
+          </li>
+          <li class="nav-item badge-pill badge-primary" data-toggle="tooltip" data-placement="bottom" title="Your wallet has $<%-wallet%> only left."> $<%-wallet%></li>
+          <li class="nav-item btn btn-outline-primary" id="logoutbtn"><a href="#"><h4>Logout</h4></a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="main-content">
+      <div class="container row" id="menu">
+        <div class="cards">
+          <div class="button cardify">
+            <h3>Track Documents</h3>
+          </div>
+          <div class="button cardify" id="upload">
+            <h3>Upload Document</h3>
+          </div>
+          <div class="button cardify" id="wallet">
+            <h3>Topup Wallet</h3>
+          </div>
+          <div class="button cardify">
+            <h3>Check Pricing</h3>
+          </div>
+        </div>
+      </div>
+      <div class="container row" id="topup">
+        <h2>Topup Wallet</h2>
+        <form class="" action="/api/topup/topup" method="post">
+          <label for="email">Email</label><br>
+          <input type="email" name="email" placeholder="EMACL registered email only"><br>
+          <label for="phoneNumber">Phone</label><br>
+          <input type="text" name="contact" placeholder="0777213388 (Econet only)"><br>
+          <label for="amount">Amount</label><br>
+          <input type="number" name="amount" placeholder=">= $1" min="1" max="9">
+          <hr>
+          <input type="submit" value="Topup">
+        </form>
+        <input type="button" id="back" value="Back">
+      </div>
+      <div class="container row" id="uploads">
+        <div class="uploading">
+          <div id="faira">Select A File To Upload</div>
+          <form method="post"  id="thatform">
+            <div>
+              <input type="file" id="file" class="input">
+            </div>
+            <div>
+              <input type="submit" value="Upload" id="uploadBtn">
+            </div>
+          </form>
+          <input type="button" id="backupL" value="Back">
+        </div>
+      </div>
+    </section>
   </div>
-</body>

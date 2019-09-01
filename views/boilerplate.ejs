@@ -11,21 +11,24 @@
     <link rel="stylesheet" href="/src/css/skeleton.css">
     <link rel="stylesheet" href="/src/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/src/css/master.css">
+		<!-- <link rel="stylesheet" href="/src/semantic/dist/semantic.css"> -->
+
 		<!--web stylesheets end here-->
 
 		<!--javascript links here-->
 		<script src="/src/js/app.js" charset="utf-8"></script>
 		<script src="/src/js/bootstrap.min.js" charset="utf-8"></script>
     <script src="/src/js/jquery-3.2.1.min.js" charset="utf-8"></script>
+		<script src="/src/js/popper.js" charset="utf-8"></script>
+		<script src="/src/js/tooltip.js" charset="utf-8"></script>
+		<!-- <script src="/src/semantic/dist/semantic.min.js"></script> -->
+	  <script src="/src/js/axios.js"></script>
 
 
 		<!--javascript links end here-->
 </head>
-<body style="background-image: url("./src/images/bg.jpg");">
-
-
+<body>
 		<%- body -%>
-
  <script>
     $(document).ready(() => {
 
@@ -74,7 +77,53 @@
 				loginForm.fadeIn(4000);
 			}, 5000);
 		});
- </script>
 
+		$(document).ready(() => {
+			let topup = $('#topup');
+			let uploads = $('#uploads');
+
+			topup.fadeOut(0);
+			uploads.fadeOut(0);
+		});
+
+		//event listeners
+		document.getElementById('wallet').addEventListener('click', popwallet);
+		document.getElementById('back').addEventListener('click', goback);
+		document.getElementById('upload').addEventListener('click', fireup);
+		document.getElementById('backupL').addEventListener('click', firedown);
+
+		//functions
+		function popwallet(){
+			let menu = $('#menu');
+			let topup = $('#topup');
+
+			menu.fadeOut(3);
+			topup.fadeIn(10);
+		};
+
+		function goback(){
+			let menu = $('#menu');
+			let topup = $('#topup');
+
+			topup.fadeOut(3);
+			menu.fadeIn(10);
+		};
+
+		function fireup(){
+			let menu = $('#menu');
+			let uploads = $('#uploads');
+
+			menu.fadeOut(3);
+			uploads.fadeIn(10);
+		};
+
+		function firedown(){
+			let menu = $('#menu');
+			let uploads = $('#uploads');
+
+			uploads.fadeOut(3);
+			menu.fadeIn(10);
+		};
+ </script>
 </body>
 </html>

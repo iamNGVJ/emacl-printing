@@ -5,7 +5,7 @@ body{
   -ms-overflow-style: none;
   scrollbar-width: none;
   -webkit-scrollbar-width: none;
-	font: 15px/1.5 'Ubuntu Condensed';
+	font: 15px/1.5 'Darker Grotesque';
 }
 
 .container{
@@ -14,10 +14,9 @@ body{
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 100vh;
+  height: 85vh;
   position: relative;
   overflow: hidden;
-  font: 15px/1.5 'Ubuntu Condensed';
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   width: 764px;
 }
@@ -135,4 +134,92 @@ h1{
 
 #sgnup{
   margin-top: 20px;
+}
+
+header a:hover{
+  text-decoration: none;
+  color: inherit;
+}
+
+li{
+  padding: 5px;
+  cursor: pointer;
+}
+
+nav{
+  height: 45px;
+  position: relative;
+}
+
+#name{
+  width: 25%;
+  padding-left: 10px;
+  position: sticky;
+}
+
+#header{
+  width: 50%;
+  text-align: center;
+  position: sticky;
+}
+
+#list{
+  width: 25%;
+  align-items: center;
+  align-content: center;
+  position: sticky;
+}
+
+#logoutbtn{
+  margin-left: 85px;
+  position: sticky;
+}
+
+li a:hover{
+  text-decoration: none;
+  color: inherit;
+}
+
+.cardify{
+
+  width: 165px;
+  height: 165px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.cardify h3{
+  padding-top: 82px;
+  font-weight: 600;
+}
+
+.cards{
+  height: 180px;
+}
+
+#back{
+  margin-top: 100px;
+}
+
+#faira{
+  margin-bottom: 7rem;
+}
+
+.uploading{
+  border: 0.5px solid gray;
+  height: 300px;
+  width: 250px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+#file{
+  margin-left: 17px;
+}
+
+#uploadBtn{
+  margin-top: 50px;
+}
+
+#thatform{
+  margin-bottom: 5rem;
 }

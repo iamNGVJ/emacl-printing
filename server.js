@@ -42,7 +42,6 @@ app.use(session({
 //Models & Routes
 const User = require('./models/users');
 app.use(require('./routes'));
-// app.use(require('morgan')('dev'));
 
 //GET requests for the landing, signup & login pages
 app.get('/', (req, res) => {
@@ -51,12 +50,14 @@ app.get('/', (req, res) => {
   });
 });
 
+//GET request for registering
 app.get('/signup', (req, res) => {
   res.render('accounts/signup', {
     title: 'EMACL || Register'
   });
 });
 
+//GET request for logging in 
 app.get('/login', (req, res) => {
   res.render('accounts/signin', {
     title: 'EMACL || Login'
