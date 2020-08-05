@@ -13,7 +13,7 @@
     "ejs-mate": "^3.0.0",
     "expess": "0.0.1-security",
     "express": "^4.17.1",
-    "express-fileupload": "^1.1.5",
+    "express-fileupload": "^1.1.9",
     "express-jwt": "^5.3.1",
     "express-session": "^1.16.2",
     "gridfs-stream": "^1.1.1",
