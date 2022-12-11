@@ -12,7 +12,7 @@
     "ejs": "^2.6.2",
     "ejs-mate": "^3.0.0",
     "expess": "0.0.1-security",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-fileupload": "^1.1.5",
     "express-jwt": "^5.3.1",
     "express-session": "^1.16.2",
